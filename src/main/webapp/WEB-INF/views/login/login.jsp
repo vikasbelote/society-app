@@ -1,3 +1,5 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,7 +38,7 @@
 		<![endif]-->
 </head>
 
-<body class="login-layout">
+<body class="login-layout light-login">
 	<div class="main-container">
 		<div class="main-content">
 			<div class="row">
@@ -44,10 +46,11 @@
 					<div class="login-container">
 						<div class="center">
 							<h1>
-								<i class="ace-icon fa fa-leaf green"></i> <span class="red">Ace</span>
+								<i class="ace-icon fa fa-leaf green"></i> <span class="red">Society</span>
 								<span class="white" id="id-text2">Application</span>
 							</h1>
-							<h4 class="blue" id="id-company-text">&copy; Company Name</h4>
+							<h4 class="blue" id="id-company-text">&copy; Anandi Software
+								Solution Pvt Ltd</h4>
 						</div>
 
 						<div class="space-6"></div>
@@ -64,17 +67,19 @@
 
 										<div class="space-6"></div>
 
-										<form>
+
+										<form:form id="login-form" commandName="loginDomain"
+											action="validateLogin" class="form-horizontal">
 											<fieldset>
 												<label class="block clearfix"> <span
 													class="block input-icon input-icon-right"> <input
-														type="text" class="form-control" placeholder="Username" />
+														type="text" class="form-control" placeholder="Username" name="userName" />
 														<i class="ace-icon fa fa-user"></i>
 												</span>
 												</label> <label class="block clearfix"> <span
 													class="block input-icon input-icon-right"> <input
 														type="password" class="form-control"
-														placeholder="Password" /> <i class="ace-icon fa fa-lock"></i>
+														placeholder="Password" name="userPassword" /> <i class="ace-icon fa fa-lock"></i>
 												</span>
 												</label>
 
@@ -85,7 +90,7 @@
 														class="ace" /> <span class="lbl"> Remember Me</span>
 													</label>
 
-													<button type="button"
+													<button type="submit"
 														class="width-35 pull-right btn btn-sm btn-primary">
 														<i class="ace-icon fa fa-key"></i> <span
 															class="bigger-110">Login</span>
@@ -94,7 +99,7 @@
 
 												<div class="space-4"></div>
 											</fieldset>
-										</form>
+										</form:form>
 
 										<div class="social-or-login center">
 											<span class="bigger-110">Or Login Using</span>
@@ -247,12 +252,12 @@
 						</div>
 						<!-- /.position-relative -->
 
-						<div class="navbar-fixed-top align-right">
+						<!-- <div class="navbar-fixed-top align-right">
 							<br /> &nbsp; <a id="btn-login-dark" href="#">Dark</a> &nbsp; <span
 								class="blue">/</span> &nbsp; <a id="btn-login-blur" href="#">Blur</a>
 							&nbsp; <span class="blue">/</span> &nbsp; <a id="btn-login-light"
 								href="#">Light</a> &nbsp; &nbsp; &nbsp;
-						</div>
+						</div> -->
 					</div>
 				</div>
 				<!-- /.col -->
