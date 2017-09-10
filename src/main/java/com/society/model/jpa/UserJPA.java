@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -27,6 +28,10 @@ public class UserJPA {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "role_id")
 	private RoleJPA role;
+	
+	@OneToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "society_id")
+	private SocietyJPA society;
 
 	public Integer getUserId() {
 		return userId;
@@ -58,5 +63,13 @@ public class UserJPA {
 
 	public void setRole(RoleJPA role) {
 		this.role = role;
+	}
+
+	public SocietyJPA getSociety() {
+		return society;
+	}
+
+	public void setSociety(SocietyJPA society) {
+		this.society = society;
 	}
 }
