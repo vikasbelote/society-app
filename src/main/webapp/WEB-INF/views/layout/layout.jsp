@@ -27,7 +27,9 @@
 		<div class="main-content">
 			<div class="main-content-inner">
 				<tiles:insertAttribute name="breadcrumbs" />
-				<tiles:insertAttribute name="body" />
+				<div class="page-content">
+					<tiles:insertAttribute name="body" />
+				</div>
 			</div>
 		</div>
 		

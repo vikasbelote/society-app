@@ -26,7 +26,7 @@ public class SocietyJPA {
 	
 	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "address_id")
-	private AddressJPA addressId;
+	private AddressJPA address;
 	
 	@OneToMany(mappedBy = "society", fetch = FetchType.LAZY)
 	private List<SocietyMemberJPA> memberList;
@@ -47,11 +47,19 @@ public class SocietyJPA {
 		this.societyName = societyName;
 	}
 
-	public AddressJPA getAddressId() {
-		return addressId;
+	public List<SocietyMemberJPA> getMemberList() {
+		return memberList;
 	}
 
-	public void setAddressId(AddressJPA addressId) {
-		this.addressId = addressId;
+	public void setMemberList(List<SocietyMemberJPA> memberList) {
+		this.memberList = memberList;
+	}
+
+	public AddressJPA getAddress() {
+		return address;
+	}
+
+	public void setAddress(AddressJPA address) {
+		this.address = address;
 	}
 }

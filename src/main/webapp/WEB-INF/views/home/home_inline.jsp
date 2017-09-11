@@ -1,1 +1,1 @@
-<script src="./inline-script/home/home.js"></script>
+<script src="./assets/inline-script/home/home.js"></script>
