@@ -14,84 +14,206 @@
 
 			<div class="form-group">
 				<label class="col-sm-3 control-label no-padding-right"
-					for="form-field-1"> Society Name </label>
+					for="form-field-1"> Society Name <i class="fa fa-asterisk"
+					style="color: red;"></i>
+				</label>
 
 				<div class="col-sm-9">
 					<input type="text" id="form-field-1" placeholder="Name of society"
 						class="col-xs-10 col-sm-5" />
 				</div>
 			</div>
+			<h3 class="header smaller lighter green">Society User Details</h3>
+
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right">User
+					Name<i class="fa fa-asterisk" style="color: red;"></i>
+				</label>
+				<div class="col-sm-9 inputGroupContainer">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="fa fa-user"></i></span>
+						<input name="userName" placeholder="User Name"
+							class=" col-xs-10 col-sm-4" type="text">
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right">Password
+					<i class="fa fa-asterisk" style="color: red;"></i>
+				</label>
+				<div class="col-sm-9 inputGroupContainer">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="fa fa-key"></i></span> <input
+							name="userpassword" placeholder="Password"
+							class=" col-xs-10 col-sm-4" type="text">
+					</div>
+				</div>
+			</div>
+
+
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right">First
+					Name <i class="fa fa-asterisk" style="color: red;"></i>
+				</label>
+				<div class="col-sm-9 inputGroupContainer">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="fa fa-user"></i></span>
+						<input name="first_name" placeholder="First Name"
+							class=" col-xs-10 col-sm-4" type="text">
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right">Middle
+					Name</label>
+				<div class="col-sm-9 inputGroupContainer">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="fa fa-user"></i></span>
+						<input name="first_name" placeholder="Middle Name"
+							class=" col-xs-10 col-sm-4" type="text">
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right">Last
+					Name <i class="fa fa-asterisk" style="color: red;"></i>
+				</label>
+				<div class="col-sm-9 inputGroupContainer">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="fa fa-user"></i></span>
+						<input name="first_name" placeholder="Last Name"
+							class=" col-xs-10 col-sm-4" type="text">
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right">Mobile
+					Number <i class="fa fa-asterisk" style="color: red;"></i>
+				</label>
+				<div class="col-sm-9 inputGroupContainer">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="fa fa-mobile"></i></span>
+						<input name="mobileNumber" placeholder="(845)555-1212"
+							class=" col-xs-10 col-sm-4" type="text">
+					</div>
+				</div>
+			</div>
+
+
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right">Email
+					Id <i class="fa fa-asterisk" style="color: red;"></i>
+				</label>
+				<div class="col-sm-9 inputGroupContainer">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+						<input name="email" placeholder="Email Address"
+							class=" col-xs-10 col-sm-4" type="text">
+					</div>
+				</div>
+			</div>
+
 			<h3 class="header smaller lighter green">Address Details</h3>
-			<div class="form-group">
-				<label class="col-sm-3 control-label no-padding-right"
-					for="form-field-1"> Address Text </label>
 
-				<div class="col-sm-9">
-					<input type="text" id="form-field-1"
-						placeholder="Please enter landmark" class="col-xs-10 col-sm-5" />
-				</div>
-			</div>
 			<div class="form-group">
-				<label class="col-sm-3 control-label no-padding-right"
-					for="form-field-1"> Area Name </label>
-
-				<div class="col-sm-9">
-					<input type="text" id="form-field-1"
-						placeholder="Please enter area name" class="col-xs-10 col-sm-5" />
-				</div>
-			</div>
-			<div class="form-group">
-				<label class="col-sm-3 control-label no-padding-right"
-					for="form-field-1"> Plot Number </label>
-
-				<div class="col-sm-9">
-					<input type="text" id="form-field-1"
-						placeholder="Please enter plot number" class="col-xs-10 col-sm-5" />
+				<label class="col-sm-3 control-label no-padding-right">Address
+					Text </label>
+				<div class="col-sm-9 inputGroupContainer">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="fa fa-home"></i></span>
+						<input name="email" placeholder="Address Text"
+							class=" col-xs-10 col-sm-4" type="text">
+					</div>
 				</div>
 			</div>
 
 			<div class="form-group">
-				<label class="col-sm-3 control-label no-padding-right"
-					for="form-field-1"> Sector Number </label>
-
-				<div class="col-sm-9">
-					<input type="text" id="form-field-1"
-						placeholder="Please enter sector number"
-						class="col-xs-10 col-sm-5" />
+				<label class="col-sm-3 control-label no-padding-right">Area
+					Name <i class="fa fa-asterisk" style="color: red;"></i>
+				</label>
+				<div class="col-sm-9 inputGroupContainer">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="fa fa-home"></i></span>
+						<input name="email" placeholder="Area Name"
+							class=" col-xs-10 col-sm-4" type="text">
+					</div>
 				</div>
 			</div>
 
 			<div class="form-group">
-				<label class="col-sm-3 control-label no-padding-right"
-					for="form-field-1"> City </label>
-
-				<div class="col-sm-9">
-					<input type="text" id="form-field-1"
-						placeholder="Please enter city" class="col-xs-10 col-sm-5" />
+				<label class="col-sm-3 control-label no-padding-right">Plot
+					Number <i class="fa fa-asterisk" style="color: red;"></i>
+				</label>
+				<div class="col-sm-9 inputGroupContainer">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="fa fa-home"></i></span>
+						<input name="email" placeholder="Plot Number"
+							class=" col-xs-10 col-sm-4" type="text">
+					</div>
 				</div>
 			</div>
 
 			<div class="form-group">
-				<label class="col-sm-3 control-label no-padding-right"
-					for="form-field-1"> Pin Code </label>
-
-				<div class="col-sm-9">
-					<input type="text" id="form-field-1"
-						placeholder="Please enter pin code" class="col-xs-10 col-sm-5" />
+				<label class="col-sm-3 control-label no-padding-right">Sector
+					Number <i class="fa fa-asterisk" style="color: red;"></i>
+				</label>
+				<div class="col-sm-9 inputGroupContainer">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="fa fa-home"></i></span>
+						<input name="email" placeholder="Sector Number"
+							class=" col-xs-10 col-sm-4" type="text">
+					</div>
 				</div>
 			</div>
 
 			<div class="form-group">
-				<label class="col-sm-3 control-label no-padding-right"
-					for="form-field-1"> State </label>
-
-				<div class="col-sm-9">
-					<input type="text" id="form-field-1"
-						placeholder="Please enter state" class="col-xs-10 col-sm-5" />
+				<label class="col-sm-3 control-label no-padding-right">City
+					<i class="fa fa-asterisk" style="color: red;"></i>
+				</label>
+				<div class="col-sm-9 inputGroupContainer">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="fa fa-home"></i></span>
+						<input name="email" placeholder="City" class=" col-xs-10 col-sm-4"
+							type="text">
+					</div>
 				</div>
 			</div>
+
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right">Pin
+					Code <i class="fa fa-asterisk" style="color: red;"></i>
+				</label>
+				<div class="col-sm-9 inputGroupContainer">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="fa fa-home"></i></span>
+						<input name="email" placeholder="Pin Code"
+							class=" col-xs-10 col-sm-4" type="text">
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right">State
+				</label>
+				<div class="col-sm-9 inputGroupContainer">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="fa fa-home"></i></span>
+						<input name="email" placeholder="State"
+							class=" col-xs-10 col-sm-4" type="text">
+					</div>
+				</div>
+			</div>
+
+
 			<h3 class="header smaller lighter green">Society Member Details</h3>
 
+			<a href="#modal-form" role="button" class="btn btn-sm btn-primary"
+				data-toggle="modal"> Add Member </a>
+			<div class="space-4"></div>
 			<table id="simple-table" class="table  table-bordered table-hover">
 				<thead>
 					<tr>
@@ -190,23 +312,6 @@
 						<td colspan="8">
 							<div class="table-detail">
 								<div class="row">
-									<div class="col-xs-12 col-sm-2">
-										<div class="text-center">
-											<img height="150" class="thumbnail inline no-margin-bottom"
-												alt="Domain Owner's Avatar"
-												src="../assets/avatars/profile-pic.jpg" /> <br />
-											<div
-												class="width-80 label label-info label-xlg arrowed-in arrowed-in-right">
-												<div class="inline position-relative">
-													<a class="user-title-label" href="#"> <i
-														class="ace-icon fa fa-circle light-green"></i> &nbsp; <span
-														class="white">Alex M. Doe</span>
-													</a>
-												</div>
-											</div>
-										</div>
-									</div>
-
 									<div class="col-xs-12 col-sm-7">
 										<div class="space visible-xs"></div>
 
@@ -374,22 +479,7 @@
 						<td colspan="8">
 							<div class="table-detail">
 								<div class="row">
-									<div class="col-xs-12 col-sm-2">
-										<div class="text-center">
-											<img height="150" class="thumbnail inline no-margin-bottom"
-												alt="Domain Owner's Avatar"
-												src="../assets/avatars/profile-pic.jpg" /> <br />
-											<div
-												class="width-80 label label-info label-xlg arrowed-in arrowed-in-right">
-												<div class="inline position-relative">
-													<a class="user-title-label" href="#"> <i
-														class="ace-icon fa fa-circle light-green"></i> &nbsp; <span
-														class="white">Alex M. Doe</span>
-													</a>
-												</div>
-											</div>
-										</div>
-									</div>
+
 
 									<div class="col-xs-12 col-sm-7">
 										<div class="space visible-xs"></div>
@@ -558,22 +648,7 @@
 						<td colspan="8">
 							<div class="table-detail">
 								<div class="row">
-									<div class="col-xs-12 col-sm-2">
-										<div class="text-center">
-											<img height="150" class="thumbnail inline no-margin-bottom"
-												alt="Domain Owner's Avatar"
-												src="../assets/avatars/profile-pic.jpg" /> <br />
-											<div
-												class="width-80 label label-info label-xlg arrowed-in arrowed-in-right">
-												<div class="inline position-relative">
-													<a class="user-title-label" href="#"> <i
-														class="ace-icon fa fa-circle light-green"></i> &nbsp; <span
-														class="white">Alex M. Doe</span>
-													</a>
-												</div>
-											</div>
-										</div>
-									</div>
+
 
 									<div class="col-xs-12 col-sm-7">
 										<div class="space visible-xs"></div>
@@ -742,22 +817,7 @@
 						<td colspan="8">
 							<div class="table-detail">
 								<div class="row">
-									<div class="col-xs-12 col-sm-2">
-										<div class="text-center">
-											<img height="150" class="thumbnail inline no-margin-bottom"
-												alt="Domain Owner's Avatar"
-												src="../assets/avatars/profile-pic.jpg" /> <br />
-											<div
-												class="width-80 label label-info label-xlg arrowed-in arrowed-in-right">
-												<div class="inline position-relative">
-													<a class="user-title-label" href="#"> <i
-														class="ace-icon fa fa-circle light-green"></i> &nbsp; <span
-														class="white">Alex M. Doe</span>
-													</a>
-												</div>
-											</div>
-										</div>
-									</div>
+
 
 									<div class="col-xs-12 col-sm-7">
 										<div class="space visible-xs"></div>
@@ -926,22 +986,6 @@
 						<td colspan="8">
 							<div class="table-detail">
 								<div class="row">
-									<div class="col-xs-12 col-sm-2">
-										<div class="text-center">
-											<img height="150" class="thumbnail inline no-margin-bottom"
-												alt="Domain Owner's Avatar"
-												src="../assets/avatars/profile-pic.jpg" /> <br />
-											<div
-												class="width-80 label label-info label-xlg arrowed-in arrowed-in-right">
-												<div class="inline position-relative">
-													<a class="user-title-label" href="#"> <i
-														class="ace-icon fa fa-circle light-green"></i> &nbsp; <span
-														class="white">Alex M. Doe</span>
-													</a>
-												</div>
-											</div>
-										</div>
-									</div>
 
 									<div class="col-xs-12 col-sm-7">
 										<div class="space visible-xs"></div>
@@ -1034,6 +1078,112 @@
 				</tbody>
 			</table>
 
+			<div class="clearfix form-actions">
+				<div class="col-sm-offset-3">
+					<button class="btn btn-success">
+						<i class="ace-icon fa fa-check bigger-110"></i>Submit
+					</button>
+					&nbsp; &nbsp; &nbsp;
+					<button class="btn" type="reset">
+						<i class="ace-icon fa fa-undo bigger-110"></i> Reset
+					</button>
+				</div>
+			</div>
+
 		</form>
+
+		<div id="modal-form" class="modal" tabindex="-1">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="blue bigger">Add New Society Member</h4>
+					</div>
+
+					<div class="modal-body">
+						<div class="row">
+
+							<div class="form-group">
+								<label class="col-sm-3 control-label no-padding-right">First
+									Name <i class="fa fa-asterisk" style="color: red;"></i>
+								</label>
+								<div class="col-sm-9 inputGroupContainer">
+									<div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-user"></i></span>
+										<input name="first_name" placeholder="First Name"
+											class=" col-xs-10 col-sm-6" type="text">
+									</div>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="col-sm-3 control-label no-padding-right">Middle
+									Name</label>
+								<div class="col-sm-9 inputGroupContainer">
+									<div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-user"></i></span>
+										<input name="first_name" placeholder="Middle Name"
+											class=" col-xs-10 col-sm-6" type="text">
+									</div>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="col-sm-3 control-label no-padding-right">Last
+									Name <i class="fa fa-asterisk" style="color: red;"></i>
+								</label>
+								<div class="col-sm-9 inputGroupContainer">
+									<div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-user"></i></span>
+										<input name="first_name" placeholder="Last Name"
+											class=" col-xs-10 col-sm-6" type="text">
+									</div>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="col-sm-3 control-label no-padding-right">Mobile
+									Number <i class="fa fa-asterisk" style="color: red;"></i>
+								</label>
+								<div class="col-sm-9 inputGroupContainer">
+									<div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-mobile"></i></span>
+										<input name="mobileNumber" placeholder="(845)555-1212"
+											class=" col-xs-10 col-sm-6" type="text">
+									</div>
+								</div>
+							</div>
+
+
+							<div class="form-group">
+								<label class="col-sm-3 control-label no-padding-right">Email
+									Id <i class="fa fa-asterisk" style="color: red;"></i>
+								</label>
+								<div class="col-sm-9 inputGroupContainer">
+									<div class="input-group">
+										<span class="input-group-addon"><i
+											class="fa fa-envelope"></i></span> <input name="email"
+											placeholder="Email Address" class=" col-xs-10 col-sm-6"
+											type="text">
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+					<div class="modal-footer">
+						<button class="btn btn-sm" data-dismiss="modal">
+							<i class="ace-icon fa fa-times"></i> Cancel
+						</button>
+
+						<button class="btn btn-sm btn-primary">
+							<i class="ace-icon fa fa-check"></i> Save
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
 	</div>
 </div>
