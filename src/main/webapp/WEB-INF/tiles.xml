@@ -40,4 +40,7 @@
 		<put-attribute name="body" value="/WEB-INF/views/home/about.jsp" />
 	</definition>
 	
+	<definition name="memberRow" template="/WEB-INF/views/society/member_row.jsp">	
+	</definition>
+	
 </tiles-definitions>
