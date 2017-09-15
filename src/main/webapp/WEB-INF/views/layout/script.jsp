@@ -21,6 +21,9 @@
 	<script src="./assets/js/jquery-ui.custom.js"></script>
 	<script src="./assets/js/jquery.ui.touch-punch.js"></script>
 	<script src="./assets/js/jquery.easypiechart.js"></script>
+	<script src="./assets/js/bootbox.js"></script>
+	<script src="./assets/js/jquery.gritter.js"></script>
+	<script src="./assets/js/spin.js"></script>
 	<script src="./assets/js/jquery.sparkline.js"></script>
 	<script src="./assets/js/flot/jquery.flot.js"></script>
 	<script src="./assets/js/flot/jquery.flot.pie.js"></script>

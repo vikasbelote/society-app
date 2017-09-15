@@ -36,6 +36,10 @@
 		<put-attribute name="inline" value="/WEB-INF/views/society/society_inline.jsp" />
 	</definition>
 	
+	<definition name="registrationStatus" extends="layout.basic">
+		<put-attribute name="body" value="/WEB-INF/views/society/registration_status.jsp" />
+	</definition>
+	
 	<definition name="about" extends="layout.basic">
 		<put-attribute name="body" value="/WEB-INF/views/home/about.jsp" />
 	</definition>

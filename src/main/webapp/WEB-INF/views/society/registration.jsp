@@ -233,7 +233,7 @@
 
 			<div class="clearfix form-actions">
 				<div class="col-sm-offset-3">
-					<button type="submit" class="btn btn-success">
+					<button id="societySubmitBtn" type="button" class="btn btn-success">
 						<i class="ace-icon fa fa-check bigger-110"></i>Submit
 					</button>
 					&nbsp; &nbsp; &nbsp;

@@ -1,17 +1,24 @@
 package com.society.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.society.model.domain.PersonDomain;
 import com.society.model.domain.SocietyForm;
+import com.society.service.SocietyService;
 
 @Controller
 public class SocietyController {
+	
+	@Autowired
+	private SocietyService societyService;
 	
 	@RequestMapping(value = "societyRegistration", method = RequestMethod.GET)
 	public ModelAndView getSociety() {
@@ -24,10 +31,23 @@ public class SocietyController {
 	}
 	
 	@RequestMapping(value = "societyRegistration", method = RequestMethod.POST)
-	public ModelAndView postSociety(@RequestBody SocietyForm societyForm) {
+	public String postSociety(@ModelAttribute SocietyForm societyForm, final RedirectAttributes redirectAttributes) {
 		
-		ModelAndView modelAndView = new ModelAndView();
-		return modelAndView;
+		try{
+			if(societyService.registerSociety(societyForm))
+				redirectAttributes.addFlashAttribute("successMsg","Congrats!!! Your society account registered successfully.");
+			else
+				redirectAttributes.addFlashAttribute("successMsg","There is problem with creating new society account.");
+		}
+		catch(Exception e) {
+			redirectAttributes.addFlashAttribute("successMsg","There is problem with creating new society account.");
+		}
+		return "redirect:/registrationStatus";
+	}
+	
+	@RequestMapping(value = "registrationStatus", method = RequestMethod.GET)
+	public ModelAndView registrationStatus() {
+		return new ModelAndView("registrationStatus");
 	}
 	
 }

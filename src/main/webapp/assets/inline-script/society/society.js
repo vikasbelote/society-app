@@ -175,3 +175,18 @@ function clearTextForPersonModel() {
 	
 	$("#modelMsgDiv").addClass("hide");
 }
+
+
+$("#societySubmitBtn").click(function(){
+	
+	var unique_id = $.gritter.add({
+		title: 'This is a sticky notice!',
+		text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget tincidunt velit. Cum sociis natoque penatibus et <a href="#" class="red">magnis dis parturient</a> montes, nascetur ridiculus mus.',
+		image: './assets/avatars/avatar.png',
+		sticky: true,
+		time: '',
+		class_name: 'gritter-info gritter-light'
+	});
+	
+	return false;
+});
