@@ -19,7 +19,7 @@
 				</label>
 
 				<div class="col-sm-9">
-					<input type="text" id="form-field-1" placeholder="Name of society" name="societyName"
+					<input type="text" id="societyNameId" placeholder="Name of society" name="societyName"
 						class="col-xs-10 col-sm-5" />
 				</div>
 			</div>
@@ -32,7 +32,7 @@
 				<div class="col-sm-9 inputGroupContainer">
 					<div class="input-group">
 						<span class="input-group-addon"><i class="fa fa-user"></i></span>
-						<input name="userName" placeholder="User Name"
+						<input id="userNameId" name="userName" placeholder="User Name"
 							class=" col-xs-10 col-sm-4" type="text">
 					</div>
 				</div>
@@ -44,7 +44,7 @@
 				</label>
 				<div class="col-sm-9 inputGroupContainer">
 					<div class="input-group">
-						<span class="input-group-addon"><i class="fa fa-key"></i></span> <input
+						<span class="input-group-addon"><i class="fa fa-key"></i></span> <input id="userPasswordId"
 							name="userPassword" placeholder="Password"
 							class=" col-xs-10 col-sm-4" type="text">
 					</div>
@@ -59,7 +59,7 @@
 				<div class="col-sm-9 inputGroupContainer">
 					<div class="input-group">
 						<span class="input-group-addon"><i class="fa fa-user"></i></span>
-						<input name="firstName" placeholder="First Name"
+						<input name="firstName" placeholder="First Name" id="firstNameId"
 							class=" col-xs-10 col-sm-4" type="text">
 					</div>
 				</div>
@@ -84,7 +84,7 @@
 				<div class="col-sm-9 inputGroupContainer">
 					<div class="input-group">
 						<span class="input-group-addon"><i class="fa fa-user"></i></span>
-						<input name="lastName" placeholder="Last Name"
+						<input name="lastName" placeholder="Last Name" id="lastNameId"
 							class=" col-xs-10 col-sm-4" type="text">
 					</div>
 				</div>
@@ -97,7 +97,7 @@
 				<div class="col-sm-9 inputGroupContainer">
 					<div class="input-group">
 						<span class="input-group-addon"><i class="fa fa-mobile"></i></span>
-						<input name="contactNumber" placeholder="(845)555-1212"
+						<input name="contactNumber" placeholder="(845)555-1212" id="contactNumberId"
 							class=" col-xs-10 col-sm-4" type="text">
 					</div>
 				</div>
@@ -111,7 +111,7 @@
 				<div class="col-sm-9 inputGroupContainer">
 					<div class="input-group">
 						<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-						<input name="emailId" placeholder="Email Address"
+						<input name="emailId" placeholder="Email Address" id="emailIdId"
 							class=" col-xs-10 col-sm-4" type="text">
 					</div>
 				</div>
@@ -125,7 +125,7 @@
 				<div class="col-sm-9 inputGroupContainer">
 					<div class="input-group">
 						<span class="input-group-addon"><i class="fa fa-home"></i></span>
-						<input name="addressText" placeholder="Address Text"
+						<input name="addressText" placeholder="Address Text" id="addressTextId"
 							class=" col-xs-10 col-sm-4" type="text">
 					</div>
 				</div>
@@ -138,7 +138,7 @@
 				<div class="col-sm-9 inputGroupContainer">
 					<div class="input-group">
 						<span class="input-group-addon"><i class="fa fa-home"></i></span>
-						<input name="areaName" placeholder="Area Name"
+						<input name="areaName" placeholder="Area Name" id="areaNameId"
 							class=" col-xs-10 col-sm-4" type="text">
 					</div>
 				</div>
@@ -151,7 +151,7 @@
 				<div class="col-sm-9 inputGroupContainer">
 					<div class="input-group">
 						<span class="input-group-addon"><i class="fa fa-home"></i></span>
-						<input name="plotNo" placeholder="Plot Number"
+						<input name="plotNo" placeholder="Plot Number" id="plotNoId"
 							class=" col-xs-10 col-sm-4" type="text">
 					</div>
 				</div>
@@ -164,7 +164,7 @@
 				<div class="col-sm-9 inputGroupContainer">
 					<div class="input-group">
 						<span class="input-group-addon"><i class="fa fa-home"></i></span>
-						<input name="sectorNo" placeholder="Sector Number"
+						<input name="sectorNo" placeholder="Sector Number" id="sectorNoId"
 							class=" col-xs-10 col-sm-4" type="text">
 					</div>
 				</div>
@@ -177,7 +177,7 @@
 				<div class="col-sm-9 inputGroupContainer">
 					<div class="input-group">
 						<span class="input-group-addon"><i class="fa fa-home"></i></span>
-						<input name="city" placeholder="City" class=" col-xs-10 col-sm-4"
+						<input name="city" placeholder="City" class=" col-xs-10 col-sm-4" id="cityId"
 							type="text">
 					</div>
 				</div>
@@ -190,7 +190,7 @@
 				<div class="col-sm-9 inputGroupContainer">
 					<div class="input-group">
 						<span class="input-group-addon"><i class="fa fa-home"></i></span>
-						<input name="pinCode" placeholder="Pin Code"
+						<input name="pinCode" placeholder="Pin Code" id="pinCodeId"
 							class=" col-xs-10 col-sm-4" type="text">
 					</div>
 				</div>
@@ -202,7 +202,7 @@
 				<div class="col-sm-9 inputGroupContainer">
 					<div class="input-group">
 						<span class="input-group-addon"><i class="fa fa-home"></i></span>
-						<input name="state" placeholder="State"
+						<input name="state" placeholder="State" id="stateId"
 							class=" col-xs-10 col-sm-4" type="text">
 					</div>
 				</div>
@@ -233,7 +233,7 @@
 
 			<div class="clearfix form-actions">
 				<div class="col-sm-offset-3">
-					<button id="societySubmitBtn" type="button" class="btn btn-success">
+					<button id="societySubmitBtn" type="submit" class="btn btn-success">
 						<i class="ace-icon fa fa-check bigger-110"></i>Submit
 					</button>
 					&nbsp; &nbsp; &nbsp;

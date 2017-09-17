@@ -179,14 +179,116 @@ function clearTextForPersonModel() {
 
 $("#societySubmitBtn").click(function(){
 	
-	var unique_id = $.gritter.add({
-		title: 'This is a sticky notice!',
-		text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget tincidunt velit. Cum sociis natoque penatibus et <a href="#" class="red">magnis dis parturient</a> montes, nascetur ridiculus mus.',
-		image: './assets/avatars/avatar.png',
+	var isValid = true;
+	
+	var societyName = $("#societyNameId").val();
+	if(societyName == ""){
+		showValidationMsg("Society Name","Please enter value for society name.");
+		isValid = false;
+	}
+		
+	
+	var userName = $("#userNameId").val();
+	if(userName == "") {
+		showValidationMsg("User Name","Please enter value for user name.");
+		isValid = false;
+	}
+		
+	
+	var userPassword = $("#userPasswordId").val();
+	if(userPassword == "") {
+		showValidationMsg("Password","Please enter value for password.");
+		isValid = false;
+	}
+		
+	
+	var firstName = $("#firstNameId").val();
+	if(firstName == ""){
+		showValidationMsg("First Name","Please enter value for First Name.");
+		isValid = false;
+	}
+		
+	
+	var lastName = $("#lastNameId").val();
+	if(lastName == "") {
+		showValidationMsg("Last Name","Please enter value for Last Name.");
+		isValid = false;
+	}
+		
+	
+	var contactNumber = $("#contactNumberId").val();
+	if(contactNumber == ""){
+		showValidationMsg("Contact Number","Please enter value for Conatct Number.");
+		isValid = false;
+	}
+		
+	
+	var emailId = $("#emailIdId").val();
+	if(emailId == "") {
+		showValidationMsg("Email Id","Please enter value for email Id.");
+		isValid = false;
+	}
+		
+	
+	var addressText = $("#addressTextId").val();
+	if(addressText == "") {
+		showValidationMsg("Address Text","Please enter value for address text.");
+		isValid = false;
+	}
+		
+	
+	var areaName = $("#areaNameId").val();
+	if(areaName == ""){
+		showValidationMsg("Area Name","Please enter value for area name.");
+		isValid = false;
+	}
+		
+	
+	var plotNo = $("#plotNoId").val();
+	if(plotNo == "") {
+		showValidationMsg("Plot No","Please enter value for plot no.");
+		isValid = false;
+	}
+		
+	
+	var sectorNo = $("#sectorNoId").val();
+	if(sectorNo == ""){
+		showValidationMsg("Sector No","Please enter value for sector no.");
+		isValid = false;
+	}
+		
+	
+	var city = $("#cityId").val();
+	if(city == "") {
+		showValidationMsg("City","Please enter value for city.");
+		isValid = false;
+	}
+		
+	
+	var pinCode = $("#pinCodeId").val();
+	if(pinCode == "") {
+		showValidationMsg("Pin Code","Please enter value for pin code.");
+		isValid = false;
+	}
+		
+	
+	var state = $("#stateId").val();
+	if(state == "") {
+		showValidationMsg("State","Please enter value for state.");
+		isValid = false;
+	}
+	
+	return isValid;
+});
+
+function showValidationMsg(titleName, msgText) {
+	
+	$.gritter.add({
+		title: titleName,
+		text: msgText,
 		sticky: true,
 		time: '',
-		class_name: 'gritter-info gritter-light'
+		class_name: 'gritter-error'
 	});
-	
-	return false;
-});
+}
+

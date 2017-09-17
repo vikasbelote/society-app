@@ -5,6 +5,7 @@ import java.util.List;
 import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
 
+import com.society.model.jpa.RoleJPA;
 import com.society.model.jpa.SocietyJPA;
 import com.society.model.jpa.SocietyMemberJPA;
 import com.society.model.jpa.UserJPA;
@@ -20,6 +21,9 @@ public class SocietyRepository extends BaseRepository {
 			session.beginTransaction();
 			
 			session.persist(society);
+			
+			RoleJPA role = session.load(RoleJPA.class, new Integer(2));
+			user.setRole(role);
 			session.persist(user);
 			
 			for(SocietyMemberJPA societyMember : societyMemberList) {
