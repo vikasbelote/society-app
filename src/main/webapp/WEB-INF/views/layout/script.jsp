@@ -51,3 +51,7 @@
 	<script src="./assets/js/ace/ace.settings-skin.js"></script>
 	<script src="./assets/js/ace/ace.widget-on-reload.js"></script>
 	<script src="./assets/js/ace/ace.searchbox-autocomplete.js"></script>
+	
+	<!-- numeric scripts -->
+	<script src="./assets/js/numeric/jquery.numeric.min.js"></script>
+	<script src="./assets/js/numeric/numeric_inline.js"></script>

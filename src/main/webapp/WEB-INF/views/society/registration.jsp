@@ -98,7 +98,7 @@
 					<div class="input-group">
 						<span class="input-group-addon"><i class="fa fa-mobile"></i></span>
 						<input name="contactNumber" placeholder="(845)555-1212" id="contactNumberId"
-							class=" col-xs-10 col-sm-4" type="text">
+							class=" col-xs-10 col-sm-4 numeric" type="text">
 					</div>
 				</div>
 			</div>
@@ -152,7 +152,7 @@
 					<div class="input-group">
 						<span class="input-group-addon"><i class="fa fa-home"></i></span>
 						<input name="plotNo" placeholder="Plot Number" id="plotNoId"
-							class=" col-xs-10 col-sm-4" type="text">
+							class="col-xs-10 col-sm-4 numeric" type="text">
 					</div>
 				</div>
 			</div>
@@ -165,7 +165,7 @@
 					<div class="input-group">
 						<span class="input-group-addon"><i class="fa fa-home"></i></span>
 						<input name="sectorNo" placeholder="Sector Number" id="sectorNoId"
-							class=" col-xs-10 col-sm-4" type="text">
+							class=" col-xs-10 col-sm-4 numeric" type="text">
 					</div>
 				</div>
 			</div>
@@ -191,7 +191,7 @@
 					<div class="input-group">
 						<span class="input-group-addon"><i class="fa fa-home"></i></span>
 						<input name="pinCode" placeholder="Pin Code" id="pinCodeId"
-							class=" col-xs-10 col-sm-4" type="text">
+							class=" col-xs-10 col-sm-4 numeric" type="text">
 					</div>
 				</div>
 			</div>
@@ -306,7 +306,7 @@
 											<span class="input-group-addon"><i
 												class="fa fa-mobile"></i></span> <input id="memberMobileNumber"
 												name="mobileNumber" placeholder="(845)555-1212"
-												class=" col-xs-10 col-sm-6" type="text">
+												class=" col-xs-10 col-sm-6 numeric" type="text">
 										</div>
 									</div>
 								</div>
