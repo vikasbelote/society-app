@@ -1,5 +1,8 @@
 package com.society.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
@@ -10,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.society.helper.BreadCrumbHelper;
+import com.society.helper.model.BreadCrumb;
 import com.society.model.domain.PersonDomain;
 import com.society.model.domain.SocietyForm;
 import com.society.service.SocietyService;
@@ -20,9 +25,18 @@ public class SocietyController {
 	@Autowired
 	private SocietyService societyService;
 	
+	@Autowired
+	private BreadCrumbHelper breadCrumbHelper;
+	
 	@RequestMapping(value = "societyRegistration", method = RequestMethod.GET)
 	public ModelAndView getSociety() {
-		return new ModelAndView("societyRegistration");
+		
+		String[] breadCrumbs = {"Society", "Registration"};
+		List<BreadCrumb> breadCrumbList = breadCrumbHelper.getBreadCrumbList(breadCrumbs);
+		
+		ModelAndView modelAndView = new ModelAndView("societyRegistration");
+		modelAndView.addObject(breadCrumbList);
+		return modelAndView;
 	}
 	
 	@RequestMapping(value = "getMemberRow", method = RequestMethod.POST, consumes = { MediaType.APPLICATION_JSON_VALUE })

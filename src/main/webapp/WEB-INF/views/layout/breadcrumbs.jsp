@@ -1,8 +1,19 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <div class="breadcrumbs ace-save-state" id="breadcrumbs">
 	<ul class="breadcrumb">
-		<li><i class="ace-icon fa fa-home home-icon"></i> <a href="#">Home</a>
+		<li><i class="ace-icon fa fa-home home-icon"></i> <a href="home">Home</a>
 		</li>
-		<li class="active">Dashboard</li>
+		<c:forEach items="${breadCrumbList}" var="breadCrumb">
+			<c:choose>
+				<c:when test="${breadCrumb.isLast}">
+				    <li class="active">${breadCrumb.menuName}</li>
+				</c:when>
+				<c:otherwise>
+    				<li><a href="#">${breadCrumb.menuName}</a></li>
+  				</c:otherwise>
+			</c:choose>
+		</c:forEach>
 	</ul>
 	<!-- /.breadcrumb -->
 
