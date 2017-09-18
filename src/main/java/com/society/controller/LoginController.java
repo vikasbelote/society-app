@@ -1,5 +1,7 @@
 package com.society.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -25,11 +27,21 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value = "validateLogin", method = RequestMethod.POST)
-	public String postLogin(@ModelAttribute("loginDomain") LoginDomain loginDomain) {
+	public String postLogin(@ModelAttribute("loginDomain") LoginDomain loginDomain, HttpSession session) {
 		
-		if(loginService.validateLogin(loginDomain))
+		if(loginService.validateLogin(loginDomain)){
+			
+			session.setAttribute("USERNAME", loginDomain.getUserName());
+			session.setAttribute("DISPLAYNAME", loginDomain.getDisplayName());
 			return "redirect:/home";
+		}	
 		else
 			return "redirect:/";
+	}
+	
+	@RequestMapping("logout")
+	public String logout(HttpSession session) {
+		session.invalidate();
+		return "redirect:/";
 	}
 }

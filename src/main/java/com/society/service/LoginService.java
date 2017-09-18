@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.society.model.domain.LoginDomain;
+import com.society.model.jpa.RoleJPA;
+import com.society.model.jpa.SocietyJPA;
 import com.society.model.jpa.UserJPA;
 import com.society.repository.LoginRepository;
 
@@ -20,9 +22,19 @@ public class LoginService {
 	public boolean validateLogin(LoginDomain loginDomain) {
 		
 		UserJPA userJPA = mapper.map(loginDomain, UserJPA.class);
-		UserJPA  userJPADB = loginRepository.validateLogin(userJPA);
-		if(userJPADB != null)
+		UserJPA userJPADB = loginRepository.validateLogin(userJPA);
+		
+		if(userJPADB != null){
+			RoleJPA role = userJPADB.getRole();
+			if(role != null && role.getRoleName().equals("Owner")) 
+				loginDomain.setDisplayName("Application " + role.getRoleName());
+			else if(role != null && role.getRoleName().equals("Admin")) {
+				SocietyJPA society = userJPADB.getSociety();
+				if(society != null)
+					loginDomain.setDisplayName(society.getSocietyName());
+			}
 			return true;
+		}
 		else
 			return false;
 	}

@@ -1,4 +1,6 @@
-<div id="navbar" class="navbar navbar-default          ace-save-state">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<div id="navbar" class="navbar navbar-default ace-save-state">
 		<div class="navbar-container ace-save-state" id="navbar-container">
 			<!-- #section:basics/sidebar.mobile.toggle -->
 			<button type="button" class="navbar-toggle menu-toggler pull-left"
@@ -12,7 +14,7 @@
 			<div class="navbar-header pull-left">
 				<!-- #section:basics/navbar.layout.brand -->
 				<a href="#" class="navbar-brand"> <small> <i
-						class="fa fa-leaf"></i> Ace Admin
+						class="fa fa-leaf"></i> ${sessionScope.DISPLAYNAME }
 				</small>
 				</a>
 
@@ -227,7 +229,7 @@
 					<li class="light-blue"><a data-toggle="dropdown" href="#"
 						class="dropdown-toggle"> <img class="nav-user-photo"
 							src="./assets/avatars/user.jpg" alt="Jason's Photo" /> <span
-							class="user-info"> <small>Welcome,</small> Jason
+							class="user-info"> <small>Welcome,</small> ${ sessionScope.USERNAME }
 						</span> <i class="ace-icon fa fa-caret-down"></i>
 					</a>
 
@@ -243,7 +245,7 @@
 
 							<li class="divider"></li>
 
-							<li><a href="#"> <i class="ace-icon fa fa-power-off"></i>
+							<li><a href="logout"> <i class="ace-icon fa fa-power-off"></i>
 									Logout
 							</a></li>
 						</ul></li>

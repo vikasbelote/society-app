@@ -20,10 +20,10 @@ public class HomeController {
 	@RequestMapping("/home")
 	public String home(Map<String, Object> model) {
 
-		LOGGER.debug("This is a debug message");
-		LOGGER.info("This is an info message");
-		LOGGER.warn("This is a warn message");
-		LOGGER.error("This is an error message");
+		//LOGGER.debug("This is a debug message");
+		//LOGGER.info("This is an info message");
+		//LOGGER.warn("This is a warn message");
+		//LOGGER.error("This is an error message");
 
 		model.put("message", this.message);
 		return "home";
