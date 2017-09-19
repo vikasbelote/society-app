@@ -39,6 +39,7 @@
 			<li class="tree-item hide" data-template="treeitem" role="treeitem">\
 				<span class="tree-item-name">\
 				  '+($options['unselected-icon'] == null ? '' : '<i class="icon-item '+$options['unselected-icon']+'"></i>')+'\
+				  <input type="checkbox" name="rights" class="hide userRights" />\
 				  <span class="tree-label"></span>\
 				</span>\
 			</li>');

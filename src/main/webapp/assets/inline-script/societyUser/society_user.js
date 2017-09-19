@@ -83,3 +83,14 @@ function initiateDemoData() {
 		'dataSource1' : dataSource1
 	}
 }
+
+$("#tree1").on("click", ".tree-item", function(){
+	if($(this).hasClass("tree-selected")) {
+		$(this).find("input[type=checkbox]").attr("checked", true);
+		
+	}	
+	else {
+		$(this).find("input[type=checkbox]").attr("checked", false);
+	}
+		
+});

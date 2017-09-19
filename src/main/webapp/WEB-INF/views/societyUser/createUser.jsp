@@ -13,8 +13,6 @@
 		<form class="form-horizontal" role="form" method="post"
 			action="createUser">
 
-			<h3 class="header smaller lighter green">Society User Details</h3>
-
 			<div class="form-group">
 				<label class="col-sm-3 control-label no-padding-right">User
 					Name<i class="fa fa-asterisk" style="color: red;"></i>
