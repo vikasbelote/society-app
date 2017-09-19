@@ -47,4 +47,9 @@
 	<definition name="memberRow" template="/WEB-INF/views/society/member_row.jsp">	
 	</definition>
 	
+	<definition name="createUser" extends="layout.basic">
+		<put-attribute name="body" value="/WEB-INF/views/societyUser/createUser.jsp" />
+		<put-attribute name="inline" value="/WEB-INF/views/societyUser/society_user_inline.jsp" />
+	</definition>
+	
 </tiles-definitions>

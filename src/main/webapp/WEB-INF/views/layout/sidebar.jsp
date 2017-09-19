@@ -1,3 +1,5 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <div id="sidebar" class="sidebar responsive ace-save-state">
 	<script type="text/javascript">
 		try {
@@ -49,10 +51,48 @@
 
 			<ul class="submenu">
 
-				<li class=""><a href="societyRegistration"> <i
-						class="menu-icon fa fa-caret-right"></i> Registration
-				</a> <b class="arrow"></b></li>
+				<c:if test="${sessionScope.ROLENAME == 'Owner'}">
+					<li class=""><a href="societyRegistration"> <i
+							class="menu-icon fa fa-caret-right"></i> Registration
+					</a> <b class="arrow"></b></li>
+				</c:if>
+
+				<c:if test="${sessionScope.ROLENAME == 'Admin'}">
+					<li class=""><a href="createUser"> <i
+							class="menu-icon fa fa-user"></i> Create User
+					</a> <b class="arrow"></b></li>
+				</c:if>
+
 			</ul></li>
+
+		<c:if test="${sessionScope.ROLENAME == 'Admin'}">
+			<li class=""><a href="reminder"> <i
+					class="menu-icon fa fa-envelope"></i> <span class="menu-text">
+						Reminder </span>
+			</a> <b class="arrow"></b></li>
+
+			<li class=""><a href="#" class="dropdown-toggle"> <i
+					class="menu-icon fa fa-file"></i> <span class="menu-text">
+						Report </span> <b class="arrow fa fa-angle-down"></b>
+			</a> <b class="arrow"></b>
+
+				<ul class="submenu">
+
+					<li class=""><a href="balanceSheet"> <i
+							class="menu-icon fa fa-caret-right"></i> Balance Sheet
+					</a> <b class="arrow"></b></li>
+
+					<li class=""><a href="balanceSheet"> <i
+							class="menu-icon fa fa-caret-right"></i> Income & Expense
+					</a> <b class="arrow"></b></li>
+					
+					<li class=""><a href="balanceSheet"> <i
+							class="menu-icon fa fa-caret-right"></i> Member Maintenance
+					</a> <b class="arrow"></b></li>
+
+				</ul></li>
+
+		</c:if>
 	</ul>
 	<!-- /.nav-list -->
 

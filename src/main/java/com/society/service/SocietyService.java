@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.society.model.domain.SocietyForm;
+import com.society.model.domain.SocietyDomain;
 import com.society.model.jpa.AddressJPA;
 import com.society.model.jpa.PersonJPA;
 import com.society.model.jpa.SocietyJPA;
@@ -20,7 +20,7 @@ public class SocietyService {
 	@Autowired
 	private SocietyRepository societyRepository;
 	
-	public boolean registerSociety(SocietyForm societyForm) {
+	public boolean registerSociety(SocietyDomain societyForm) {
 		
 		AddressJPA address = new AddressJPA();
 		address.setAddressText(societyForm.getAddressText());

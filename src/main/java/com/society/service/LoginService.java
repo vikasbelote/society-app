@@ -26,6 +26,7 @@ public class LoginService {
 		
 		if(userJPADB != null){
 			RoleJPA role = userJPADB.getRole();
+			loginDomain.setRoleName(role.getRoleName());
 			if(role != null && role.getRoleName().equals("Owner")) 
 				loginDomain.setDisplayName("Application " + role.getRoleName());
 			else if(role != null && role.getRoleName().equals("Admin")) {

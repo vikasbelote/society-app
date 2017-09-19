@@ -14,6 +14,7 @@
 	<script src="./assets/js/bootstrap.js"></script>
 
 	<!-- page specific plugin scripts -->
+	<script src="./assets/js/fuelux/fuelux.tree.js"></script>
 
 	<!--[if lte IE 8]>
 		  <script src="./assets/js/excanvas.js"></script>
