@@ -22,6 +22,7 @@ function initiateDemoData() {
 			type : 'folder'
 		},
 		'reminder' : {
+			id   : 1,
 			text : 'Reminder',
 			type : 'item'
 		},
@@ -33,6 +34,7 @@ function initiateDemoData() {
 	tree_data['society']['additionalParameters'] = {
 		'children' : {
 			'createUser' : {
+				id   : 2,
 				text : 'Create User',
 				type : 'item'
 			}
@@ -41,14 +43,17 @@ function initiateDemoData() {
 	tree_data['report']['additionalParameters'] = {
 		'children' : {
 			'balanceSheet' : {
+				id   : 3,
 				text : 'Balance Sheet',
 				type : 'item'
 			},
 			'incomeAndExpense' : {
+				id   : 4,
 				text : 'Income & Expense',
 				type : 'item'
 			},
 			'maintenence' : {
+				id   : 5,
 				text : 'Maintenence',
 				type : 'item'
 			}

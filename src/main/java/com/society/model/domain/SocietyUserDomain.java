@@ -7,6 +7,8 @@ import org.springframework.stereotype.Component;
 @Scope("prototype")
 public class SocietyUserDomain {
 	
+	private Integer societyId;
+	
 	private String userName;
 	
 	private String userPassword;
@@ -20,6 +22,8 @@ public class SocietyUserDomain {
 	private String contactNumber;
 	
 	private String emailId;
+	
+	private String[] rights;
 
 	public String getUserName() {
 		return userName;
@@ -75,5 +79,21 @@ public class SocietyUserDomain {
 
 	public void setEmailId(String emailId) {
 		this.emailId = emailId;
+	}
+
+	public String[] getRights() {
+		return rights;
+	}
+
+	public void setRights(String[] rights) {
+		this.rights = rights;
+	}
+
+	public Integer getSocietyId() {
+		return societyId;
+	}
+
+	public void setSocietyId(Integer societyId) {
+		this.societyId = societyId;
 	}
 }

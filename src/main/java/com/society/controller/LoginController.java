@@ -34,6 +34,7 @@ public class LoginController {
 			session.setAttribute("USERNAME", loginDomain.getUserName());
 			session.setAttribute("ROLENAME", loginDomain.getRoleName());
 			session.setAttribute("DISPLAYNAME", loginDomain.getDisplayName());
+			session.setAttribute("SOCIETYID", loginDomain.getSocietyId());
 			return "redirect:/home";
 		}	
 		else

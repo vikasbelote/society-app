@@ -125,7 +125,7 @@
 					} else if (value.type === 'item') {
 						$entity = self.$element.find('[data-template=treeitem]:eq(0)').clone().removeClass('hide hidden').removeData('template'); // hide is deprecated
 						$entity.find('.tree-item-name > .tree-label').html(value.text || value.name);
-						$entity.find('.tree-item-name > .userRights').val(value.text || value.name);//Addedd for internal purpose
+						$entity.find('.tree-item-name > .userRights').val(value.id);//Addedd for internal purpose
 						$entity.data(value);
 						
 						//ACE

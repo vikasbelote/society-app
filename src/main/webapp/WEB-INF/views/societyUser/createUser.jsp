@@ -12,7 +12,9 @@
 		<!-- PAGE CONTENT BEGINS -->
 		<form class="form-horizontal" role="form" method="post"
 			action="createUser">
-
+			
+			<input type="hidden" value="${ sessionScope.SOCIETYID }" name="societyId" />
+			
 			<div class="form-group">
 				<label class="col-sm-3 control-label no-padding-right">User
 					Name<i class="fa fa-asterisk" style="color: red;"></i>

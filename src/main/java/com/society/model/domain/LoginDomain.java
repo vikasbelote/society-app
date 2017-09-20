@@ -16,6 +16,8 @@ public class LoginDomain {
 	private String displayName;
 	
 	private String roleName;
+	
+	private Integer societyId;
 
 	public Integer getUserId() {
 		return userId;
@@ -55,5 +57,13 @@ public class LoginDomain {
 
 	public void setRoleName(String roleName) {
 		this.roleName = roleName;
+	}
+
+	public Integer getSocietyId() {
+		return societyId;
+	}
+
+	public void setSocietyId(Integer societyId) {
+		this.societyId = societyId;
 	}
 }

@@ -29,10 +29,12 @@ public class LoginService {
 			loginDomain.setRoleName(role.getRoleName());
 			if(role != null && role.getRoleName().equals("Owner")) 
 				loginDomain.setDisplayName("Application " + role.getRoleName());
-			else if(role != null && role.getRoleName().equals("Admin")) {
+			else if(role != null && (role.getRoleName().equals("Admin") || role.getRoleName().equals("User"))) {
 				SocietyJPA society = userJPADB.getSociety();
-				if(society != null)
+				if(society != null){
+					loginDomain.setSocietyId(society.getSocietyId());
 					loginDomain.setDisplayName(society.getSocietyName());
+				}	
 			}
 			return true;
 		}
