@@ -2,6 +2,12 @@ package com.society.repository;
 
 import java.util.List;
 
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.JoinType;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
+
 import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
 
@@ -40,5 +46,29 @@ public class SocietyUserRepository extends BaseRepository {
 			if(session != null)
 				session.close();
 		}
+	}
+	
+	public List<UserJPA> getSocietyUserList(Integer societyId) {
+		
+		CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+		CriteriaQuery<UserJPA> criteriaQuery = criteriaBuilder.createQuery(UserJPA.class);
+		Root<UserJPA> root = criteriaQuery.from(UserJPA.class);
+		root.fetch("role", JoinType.INNER);
+		root.fetch("society", JoinType.INNER);
+		root.fetch("person", JoinType.INNER);
+		criteriaQuery.select(root);
+		
+		Predicate societyIdPredicate = criteriaBuilder.equal(root.<Integer>get("society").get("societyId"), societyId);
+		
+		criteriaQuery.where(societyIdPredicate);
+		
+		List<UserJPA> userList;
+		try {
+			userList = entityManager.createQuery(criteriaQuery).getResultList();
+		}
+		catch(Exception e) {
+			userList = null;
+		}
+		return userList;
 	}
 }

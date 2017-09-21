@@ -52,6 +52,11 @@
 		<put-attribute name="inline" value="/WEB-INF/views/societyUser/society_user_inline.jsp" />
 	</definition>
 	
+	<definition name="userList" extends="layout.basic">
+		<put-attribute name="body" value="/WEB-INF/views/societyUser/user_list.jsp" />
+		<put-attribute name="inline" value="/WEB-INF/views/societyUser/society_user_inline.jsp" />
+	</definition>
+	
 	<definition name="createUserStatus" extends="layout.basic">
 		<put-attribute name="body" value="/WEB-INF/views/societyUser/create_user_status.jsp" />
 	</definition>

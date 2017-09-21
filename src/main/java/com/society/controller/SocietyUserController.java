@@ -15,6 +15,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.society.helper.BreadCrumbHelper;
 import com.society.helper.model.BreadCrumb;
 import com.society.model.domain.SocietyUserDomain;
+import com.society.model.domain.UserDomain;
 import com.society.service.SocietyUserService;
 
 @Controller
@@ -38,7 +39,7 @@ public class SocietyUserController {
 	}
 	
 	@RequestMapping(value = "createUser", method = RequestMethod.POST)
-	public String postUser(@ModelAttribute SocietyUserDomain societyUserDomain, RedirectAttributes redirectAttributes, HttpSession session) {
+	public String postUser(@ModelAttribute SocietyUserDomain societyUserDomain, RedirectAttributes redirectAttributes) {
 		
 		if(societyUserService.insertSocietyUserDetails(societyUserDomain))
 			redirectAttributes.addFlashAttribute("successMsg", "Congrats!!! Your society new user account created successfully.");
@@ -52,4 +53,16 @@ public class SocietyUserController {
 	public ModelAndView getUserStatus() {
 		return new ModelAndView("createUserStatus");
 	}
+	
+	@RequestMapping(value = "userList", method = RequestMethod.GET)
+	public ModelAndView getUserList(HttpSession session) {
+		
+		Integer societyId = (Integer)session.getAttribute("SOCIETYID");
+		List<UserDomain> userDomainList = societyUserService.getUserList(societyId);
+		
+		ModelAndView modelAndView = new ModelAndView("userList");
+		modelAndView.addObject("userDomainList", userDomainList);
+		return modelAndView;
+	}
+	
 }

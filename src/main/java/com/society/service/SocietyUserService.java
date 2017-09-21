@@ -3,10 +3,12 @@ package com.society.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.dozer.DozerBeanMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.society.model.domain.SocietyUserDomain;
+import com.society.model.domain.UserDomain;
 import com.society.model.jpa.AccessRightsId;
 import com.society.model.jpa.PersonJPA;
 import com.society.model.jpa.SocietyJPA;
@@ -19,6 +21,9 @@ public class SocietyUserService {
 	
 	@Autowired
 	private SocietyUserRepository societyUserRepository;
+	
+	@Autowired
+	private DozerBeanMapper mapper;
 	
 	public boolean insertSocietyUserDetails(SocietyUserDomain societyUserDomain) {
 		
@@ -57,4 +62,17 @@ public class SocietyUserService {
 		
 		return societyUserRepository.insertSocietyUserDeatils(user, rightList);
 	}
+	
+	public List<UserDomain> getUserList(Integer societyId) {
+		
+		List<UserJPA> userList = societyUserRepository.getSocietyUserList(societyId);
+		
+		List<UserDomain> userDomainList = new ArrayList<UserDomain>();
+		for(UserJPA user : userList) {
+			UserDomain userDomain = mapper.map(user, UserDomain.class);
+			userDomainList.add(userDomain);
+		}
+		return userDomainList;
+	}
+	
 }

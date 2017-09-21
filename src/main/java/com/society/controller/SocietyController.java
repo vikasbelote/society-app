@@ -16,7 +16,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.society.helper.BreadCrumbHelper;
 import com.society.helper.model.BreadCrumb;
 import com.society.model.domain.PersonDomain;
-import com.society.model.domain.SocietyDomain;
+import com.society.model.domain.SocietyForm;
 import com.society.service.SocietyService;
 
 @Controller
@@ -45,7 +45,7 @@ public class SocietyController {
 	}
 	
 	@RequestMapping(value = "societyRegistration", method = RequestMethod.POST)
-	public String postSociety(@ModelAttribute SocietyDomain societyForm, final RedirectAttributes redirectAttributes) {
+	public String postSociety(@ModelAttribute SocietyForm societyForm, final RedirectAttributes redirectAttributes) {
 		
 		try{
 			if(societyService.registerSociety(societyForm))
