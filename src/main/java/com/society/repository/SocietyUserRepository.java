@@ -24,6 +24,7 @@ public class SocietyUserRepository extends BaseRepository {
 			session.persist(user);
 			
 			for(SocietyUserAccessRightsJPA accessRights : rightList) {
+				accessRights.getAccessRightsId().setUserId(user.getUserId());
 				session.persist(accessRights);
 			}
 			

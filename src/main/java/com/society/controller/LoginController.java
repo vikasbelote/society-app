@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.society.model.domain.LoginDomain;
+import com.society.model.domain.MenuRightsDomain;
 import com.society.service.LoginService;
 
 @Controller
@@ -31,10 +32,14 @@ public class LoginController {
 		
 		if(loginService.validateLogin(loginDomain)){
 			
+			MenuRightsDomain menuRightsDomain = new MenuRightsDomain();
+			menuRightsDomain.initMenuRights(loginDomain);
+			
 			session.setAttribute("USERNAME", loginDomain.getUserName());
 			session.setAttribute("ROLENAME", loginDomain.getRoleName());
 			session.setAttribute("DISPLAYNAME", loginDomain.getDisplayName());
 			session.setAttribute("SOCIETYID", loginDomain.getSocietyId());
+			session.setAttribute("MENURIGHTS", menuRightsDomain);
 			return "redirect:/home";
 		}	
 		else

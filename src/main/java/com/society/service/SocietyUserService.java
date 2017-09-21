@@ -47,7 +47,6 @@ public class SocietyUserService {
 				
 				AccessRightsId accessRightsId = new AccessRightsId();
 				accessRightsId.setMenuId(menuId);
-				accessRightsId.setUserId(user.getUserId());
 				
 				SocietyUserAccessRightsJPA societyUserAccessRights = new SocietyUserAccessRightsJPA();
 				societyUserAccessRights.setAccessRightsId(accessRightsId);

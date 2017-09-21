@@ -1,5 +1,7 @@
 package com.society.model.domain;
 
+import java.util.List;
+
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -18,6 +20,8 @@ public class LoginDomain {
 	private String roleName;
 	
 	private Integer societyId;
+	
+	private List<Integer> menuId;
 
 	public Integer getUserId() {
 		return userId;
@@ -65,5 +69,13 @@ public class LoginDomain {
 
 	public void setSocietyId(Integer societyId) {
 		this.societyId = societyId;
+	}
+
+	public List<Integer> getMenuId() {
+		return menuId;
+	}
+
+	public void setMenuId(List<Integer> menuId) {
+		this.menuId = menuId;
 	}
 }

@@ -1,5 +1,7 @@
 package com.society.repository;
 
+import java.util.List;
+
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.JoinType;
@@ -8,6 +10,7 @@ import javax.persistence.criteria.Root;
 
 import org.springframework.stereotype.Repository;
 
+import com.society.model.jpa.SocietyUserAccessRightsJPA;
 import com.society.model.jpa.UserJPA;
 
 @Repository
@@ -39,4 +42,25 @@ public class LoginRepository extends BaseRepository {
 		}
 		return user;
 	}
+	
+	public List<SocietyUserAccessRightsJPA> getMenuAccess(UserJPA user) {
+		
+		CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+		CriteriaQuery<SocietyUserAccessRightsJPA> criteriaQuery = criteriaBuilder.createQuery(SocietyUserAccessRightsJPA.class);
+		Root<SocietyUserAccessRightsJPA> root = criteriaQuery.from(SocietyUserAccessRightsJPA.class);
+		criteriaQuery.select(root);
+		
+		Predicate userIdPredicate = criteriaBuilder.equal(root.<Integer> get("accessRightsId").get("userId"), user.getUserId());
+		criteriaQuery.where(userIdPredicate);
+		
+		List<SocietyUserAccessRightsJPA> accessRights;
+		try {
+			accessRights = entityManager.createQuery(criteriaQuery).getResultList();
+		}
+		catch(Exception e) {
+			accessRights = null;
+		}
+		return accessRights;
+	}
+	
 }

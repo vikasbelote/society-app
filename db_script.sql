@@ -20,3 +20,4 @@ INSERT INTO `society_app`.`sa_menu` (`menu_id`, `menu_name`) VALUES ('2', 'Remin
 INSERT INTO `society_app`.`sa_menu` (`menu_id`, `menu_name`) VALUES ('3', 'Balance Sheet');
 INSERT INTO `society_app`.`sa_menu` (`menu_id`, `menu_name`) VALUES ('4', 'Income & Expense');
 INSERT INTO `society_app`.`sa_menu` (`menu_id`, `menu_name`) VALUES ('5', 'Maintenence');
+INSERT INTO `society_app`.`sa_menu` (`menu_id`, `menu_name`) VALUES ('6', 'User List');

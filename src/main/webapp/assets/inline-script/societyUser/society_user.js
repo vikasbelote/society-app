@@ -37,6 +37,11 @@ function initiateDemoData() {
 				id   : 2,
 				text : 'Create User',
 				type : 'item'
+			},
+			'userList' : {
+				id   : 6,
+				text : 'User List',
+				type : 'item'
 			}
 		}
 	}
