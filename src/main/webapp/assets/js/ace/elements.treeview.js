@@ -46,7 +46,7 @@
 			
 			$this.addClass($options['selectable'] == true ? 'tree-selectable' : 'tree-unselectable');
 			
-			$this.tree($options);
+			$this.tree($options);			
 		});
 
 		return this;

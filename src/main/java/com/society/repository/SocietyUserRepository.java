@@ -71,4 +71,47 @@ public class SocietyUserRepository extends BaseRepository {
 		}
 		return userList;
 	}
+	
+	public UserJPA getSocietyUser(Integer userId) {
+		
+		CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+		CriteriaQuery<UserJPA> criteriaQuery = criteriaBuilder.createQuery(UserJPA.class);
+		Root<UserJPA> root = criteriaQuery.from(UserJPA.class);
+		root.fetch("role", JoinType.INNER);
+		root.fetch("society", JoinType.INNER);
+		root.fetch("person", JoinType.INNER);
+		criteriaQuery.select(root);
+		
+		Predicate userIdPredicate = criteriaBuilder.equal(root.<Integer>get("userId"), userId);
+		criteriaQuery.where(userIdPredicate);
+		
+		UserJPA user;
+		try {
+			user = entityManager.createQuery(criteriaQuery).getSingleResult();
+		}
+		catch(Exception e) {
+			user = null;
+		}
+		return user;
+	}
+	
+	public List<SocietyUserAccessRightsJPA> getUserRights(Integer userId) {
+		
+		CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+		CriteriaQuery<SocietyUserAccessRightsJPA> criteriaQuery = criteriaBuilder.createQuery(SocietyUserAccessRightsJPA.class);
+		Root<SocietyUserAccessRightsJPA> root = criteriaQuery.from(SocietyUserAccessRightsJPA.class);
+		criteriaQuery.select(root);
+		
+		Predicate userIdPredicate = criteriaBuilder.equal(root.<Integer>get("accessRightsId").get("userId"), userId);
+		criteriaQuery.where(userIdPredicate);
+		
+		List<SocietyUserAccessRightsJPA> menuRightList;
+		try {
+			menuRightList = entityManager.createQuery(criteriaQuery).getResultList();
+		}
+		catch(Exception e) {
+			menuRightList = null;
+		}
+		return menuRightList;
+	}
 }

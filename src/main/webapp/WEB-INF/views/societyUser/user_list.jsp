@@ -19,6 +19,7 @@
 					<thead>
 						<tr>
 							<th>User Name</th>
+							<th>Role</th>
 							<th>First Name</th>
 							<th>Last Name</th>
 							<th>Mobile Number</th>
@@ -30,11 +31,12 @@
 						<c:forEach items="${ userDomainList }" var="userDomain">
 							<tr>
 								<td>${ userDomain.userName }</td>
+								<td>${ userDomain.role.roleName }</td>
 								<td>${ userDomain.person.firstName  }</td>
 								<td>${ userDomain.person.lastName  }</td>
 								<td>${ userDomain.person.contactNumber  }</td>
 								<td>${ userDomain.person.emailId }</td>
-								<td><a href="./view?id=${ userDomain.userId }">View</a></td>
+								<td><a href="./viewUser?id=${ userDomain.userId }">View</a></td>
 							</tr>
 						</c:forEach>
 					</tbody>

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -33,13 +34,15 @@ public class SocietyUserController {
 		String[] breadCrumbs = {"Society", "Create User"};
 		List<BreadCrumb> breadCrumbList = breadCrumbHelper.getBreadCrumbList(breadCrumbs);
 		
-		ModelAndView modelAndView = new ModelAndView("createUser");
+		ModelAndView modelAndView = new ModelAndView("createUser", "societyUserDomain", new SocietyUserDomain());
 		modelAndView.addObject(breadCrumbList);
 		return modelAndView;
 	}
 	
 	@RequestMapping(value = "createUser", method = RequestMethod.POST)
-	public String postUser(@ModelAttribute SocietyUserDomain societyUserDomain, RedirectAttributes redirectAttributes) {
+	public String postUser(@ModelAttribute SocietyUserDomain societyUserDomain, RedirectAttributes redirectAttributes, HttpSession session) {
+		
+		societyUserDomain.setSocietyId((Integer)session.getAttribute("SOCIETYID"));
 		
 		if(societyUserService.insertSocietyUserDetails(societyUserDomain))
 			redirectAttributes.addFlashAttribute("successMsg", "Congrats!!! Your society new user account created successfully.");
@@ -57,11 +60,28 @@ public class SocietyUserController {
 	@RequestMapping(value = "userList", method = RequestMethod.GET)
 	public ModelAndView getUserList(HttpSession session) {
 		
+		String[] breadCrumbs = {"Society", "User List"};
+		List<BreadCrumb> breadCrumbList = breadCrumbHelper.getBreadCrumbList(breadCrumbs);
+		
 		Integer societyId = (Integer)session.getAttribute("SOCIETYID");
 		List<UserDomain> userDomainList = societyUserService.getUserList(societyId);
 		
 		ModelAndView modelAndView = new ModelAndView("userList");
 		modelAndView.addObject("userDomainList", userDomainList);
+		modelAndView.addObject(breadCrumbList);
+		return modelAndView;
+	}
+	
+	@RequestMapping(value = "viewUser", method = RequestMethod.GET)
+	public ModelAndView viewUserDetail(@RequestParam("id") Integer userId) {
+		
+		String[] breadCrumbs = {"Society", "View User Detail"};
+		List<BreadCrumb> breadCrumbList = breadCrumbHelper.getBreadCrumbList(breadCrumbs);
+		
+		SocietyUserDomain societyUserDomain = societyUserService.getUser(userId);
+		
+		ModelAndView modelAndView = new ModelAndView("createUser","societyUserDomain", societyUserDomain);
+		modelAndView.addObject(breadCrumbList);
 		return modelAndView;
 	}
 	

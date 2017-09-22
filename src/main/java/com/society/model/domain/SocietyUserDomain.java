@@ -9,6 +9,8 @@ public class SocietyUserDomain {
 	
 	private Integer societyId;
 	
+	private Integer userId;
+	
 	private String userName;
 	
 	private String userPassword;
@@ -95,5 +97,13 @@ public class SocietyUserDomain {
 
 	public void setSocietyId(Integer societyId) {
 		this.societyId = societyId;
+	}
+
+	public Integer getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Integer userId) {
+		this.userId = userId;
 	}
 }

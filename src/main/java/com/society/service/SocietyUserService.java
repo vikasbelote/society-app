@@ -75,4 +75,30 @@ public class SocietyUserService {
 		return userDomainList;
 	}
 	
+	public SocietyUserDomain getUser(Integer userId) {
+		
+		UserJPA user = societyUserRepository.getSocietyUser(userId);
+		List<SocietyUserAccessRightsJPA> menuRights = societyUserRepository.getUserRights(userId);
+		
+		SocietyUserDomain societyUserDomain = new SocietyUserDomain();
+		societyUserDomain.setUserId(userId);
+		societyUserDomain.setUserName(user.getUserName());
+		societyUserDomain.setUserPassword(user.getUserPassword());
+		societyUserDomain.setFirstName(user.getPerson().getFirstName());
+		societyUserDomain.setMiddleName(user.getPerson().getMiddleName());
+		societyUserDomain.setLastName(user.getPerson().getLastName());
+		societyUserDomain.setContactNumber(user.getPerson().getContactNumber());
+		societyUserDomain.setEmailId(user.getPerson().getEmailId());
+		
+		if(menuRights != null) {
+			String[] menuIdArr = new String[menuRights.size()];
+			int index = 0;
+			for(SocietyUserAccessRightsJPA right : menuRights) {
+				menuIdArr[index] = String.valueOf(right.getAccessRightsId().getMenuId());
+				index++;
+			}
+			societyUserDomain.setRights(menuIdArr);
+		}
+		return societyUserDomain;
+	}
 }
