@@ -28,6 +28,7 @@ public class SocietyUserService {
 	public boolean insertSocietyUserDetails(SocietyUserDomain societyUserDomain) {
 		
 		PersonJPA person = new PersonJPA();
+		person.setPersonId(societyUserDomain.getPersonId());
 		person.setFirstName(societyUserDomain.getFirstName());
 		person.setMiddleName(societyUserDomain.getMiddleName());
 		person.setLastName(societyUserDomain.getLastName());
@@ -38,6 +39,7 @@ public class SocietyUserService {
 		societyJPA.setSocietyId(societyUserDomain.getSocietyId());
 		
 		UserJPA user = new UserJPA();
+		user.setUserId(societyUserDomain.getUserId());
 		user.setUserName(societyUserDomain.getUserName());
 		user.setUserPassword(societyUserDomain.getUserPassword());
 		user.setPerson(person);
@@ -84,6 +86,7 @@ public class SocietyUserService {
 		societyUserDomain.setUserId(userId);
 		societyUserDomain.setUserName(user.getUserName());
 		societyUserDomain.setUserPassword(user.getUserPassword());
+		societyUserDomain.setPersonId(user.getPerson().getPersonId());
 		societyUserDomain.setFirstName(user.getPerson().getFirstName());
 		societyUserDomain.setMiddleName(user.getPerson().getMiddleName());
 		societyUserDomain.setLastName(user.getPerson().getLastName());

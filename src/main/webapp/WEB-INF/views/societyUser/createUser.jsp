@@ -18,6 +18,7 @@
 			class="form-horizontal" action="createUser">
 
 			<form:hidden path="userId" />
+			<form:hidden path="personId" />
 			<form:hidden path="rights" />
 
 			<div class="form-group">
@@ -125,10 +126,6 @@
 					&nbsp; &nbsp; &nbsp;
 					<button class="btn" type="reset">
 						<i class="ace-icon fa fa-undo bigger-110"></i> Reset
-					</button>
-					
-					<button class="btn" type="button" id="htmlUd">
-						<i class="ace-icon fa fa-undo bigger-110"></i> Html
 					</button>
 				</div>
 			</div>

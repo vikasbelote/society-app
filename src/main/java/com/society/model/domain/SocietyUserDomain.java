@@ -15,6 +15,8 @@ public class SocietyUserDomain {
 	
 	private String userPassword;
 	
+	private Integer personId;
+	
 	private String firstName;
 	
 	private String middleName;
@@ -105,5 +107,13 @@ public class SocietyUserDomain {
 
 	public void setUserId(Integer userId) {
 		this.userId = userId;
+	}
+
+	public Integer getPersonId() {
+		return personId;
+	}
+
+	public void setPersonId(Integer personId) {
+		this.personId = personId;
 	}
 }

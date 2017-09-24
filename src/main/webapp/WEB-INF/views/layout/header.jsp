@@ -14,6 +14,7 @@
 <!-- page specific plugin styles -->
 <link rel="stylesheet" href="./assets/css/jquery-ui.custom.css" />
 <link rel="stylesheet" href="./assets/css/jquery.gritter.css" />
+<link rel="stylesheet" href="./assets/css/chosen.css" />
 
 <!-- text fonts -->
 <link rel="stylesheet" href="./assets/css/ace-fonts.css" />

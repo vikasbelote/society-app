@@ -21,6 +21,11 @@
 		<![endif]-->
 	<script src="./assets/js/jquery-ui.custom.js"></script>
 	<script src="./assets/js/jquery.ui.touch-punch.js"></script>
+	<script src="./assets/js/chosen.jquery.js"></script>
+	<script src="./assets/js/markdown/markdown.js"></script>
+	<script src="./assets/js/markdown/bootstrap-markdown.js"></script>
+	<script src="./assets/js/jquery.hotkeys.js"></script>
+	<script src="./assets/js/bootstrap-wysiwyg.js"></script>
 	<script src="./assets/js/jquery.easypiechart.js"></script>
 	<script src="./assets/js/bootbox.js"></script>
 	<script src="./assets/js/jquery.gritter.js"></script>
@@ -52,6 +57,9 @@
 	<script src="./assets/js/ace/ace.settings-skin.js"></script>
 	<script src="./assets/js/ace/ace.widget-on-reload.js"></script>
 	<script src="./assets/js/ace/ace.searchbox-autocomplete.js"></script>
+	
+	<!-- common scripts -->
+	<script src="./assets/inline-script/society_app.js"></script>
 	
 	<!-- numeric scripts -->
 	<script src="./assets/js/numeric/jquery.numeric.min.js"></script>

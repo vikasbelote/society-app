@@ -8,9 +8,11 @@ import javax.persistence.criteria.JoinType;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
 
+import com.society.model.jpa.AccessRightsId;
 import com.society.model.jpa.RoleJPA;
 import com.society.model.jpa.SocietyUserAccessRightsJPA;
 import com.society.model.jpa.UserJPA;
@@ -25,13 +27,25 @@ public class SocietyUserRepository extends BaseRepository {
 			session = sessionFactory.openSession();
 			session.beginTransaction();
 			
+			if(user.getUserId() != null) {
+				
+				Query query = session.createQuery("delete SocietyUserAccessRightsJPA where accessRightsId.userId = :userIdForm");
+				query.setParameter("userIdForm", user.getUserId());
+				int result = query.executeUpdate();
+				 
+				if (result > 0) {
+				    System.out.println("Expensive products was removed");
+				}
+			}
+			
+			
 			RoleJPA role = session.load(RoleJPA.class, new Integer(3));
 			user.setRole(role);
-			session.persist(user);
+			session.saveOrUpdate(user);
 			
 			for(SocietyUserAccessRightsJPA accessRights : rightList) {
 				accessRights.getAccessRightsId().setUserId(user.getUserId());
-				session.persist(accessRights);
+				session.saveOrUpdate(accessRights);
 			}
 			
 			session.getTransaction().commit();

@@ -60,5 +60,9 @@
 	<definition name="createUserStatus" extends="layout.basic">
 		<put-attribute name="body" value="/WEB-INF/views/societyUser/create_user_status.jsp" />
 	</definition>
+	<definition name="reminder" extends="layout.basic">
+		<put-attribute name="body" value="/WEB-INF/views/reminder/reminder.jsp" />
+		<put-attribute name="inline" value="/WEB-INF/views/reminder/reminder_inline.jsp" />
+	</definition>
 	
 </tiles-definitions>
